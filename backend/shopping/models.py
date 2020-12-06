@@ -12,6 +12,7 @@ class Customer (models.Model):
 
     def __str__(self):
         return self.name
+        
 class Tag(models.Model):
     CATEGORY=(
         ('Shirts','Shirts'),
