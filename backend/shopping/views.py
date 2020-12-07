@@ -3,12 +3,7 @@ from django.http import HttpResponse
 from django.contrib import messages   
 from django.views.generic import ListView, DetailView  
 from django.utils import timezone
-from .models import (                           
-    Customer,
-    Tag,
-    Item,
-    Order  
-)                       
+from .models import *       
 
 class HomeView(ListView):
     model = Item
