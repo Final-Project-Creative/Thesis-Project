@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer=()=>{
     return(
+        
         <div className="main-footer">
             <div className="container">
                 <div className="row">
