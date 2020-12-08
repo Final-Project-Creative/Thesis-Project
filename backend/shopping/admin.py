@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Customer,Tag , Item,Order 
+from .models import *
 # from .models import *
 
 admin.site.register(UserProfile)
