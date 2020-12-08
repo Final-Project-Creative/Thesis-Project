@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shopping.apps.ShoppingConfig',
-    'django_countries',
+    # 'django_countries',
 ]
 
 MIDDLEWARE = [
@@ -128,4 +128,6 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "frontend/build/static"),
+    os.path.join(BASE_DIR,'static'),
 ]
+STATIC_ROOT = os.path.join(BASE_DIR,'assets')
