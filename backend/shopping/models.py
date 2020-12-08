@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.shortcuts import reverse
-# from django_countries.fields import CountryField
+from django_countries.fields import CountryField
 
 class UserProfile(models.Model):
     user = models.OneToOneField(
@@ -10,7 +10,7 @@ class UserProfile(models.Model):
     one_click_purchasing = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user.username
+        return self.user
 
 class Item(models.Model):
     CATEGORY=(
@@ -93,7 +93,7 @@ class Order(models.Model):
     ordered = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user.username
+        return self.user
     
 
     def get_total_price(self):
@@ -106,11 +106,11 @@ class CheckoutAddress(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     street_address = models.CharField(max_length=100)
     apartment_address = models.CharField(max_length=100)
-    # country = CountryField(multiple=False)
+    country = CountryField(multiple=False)
     zip = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.user.username
+        return self.user
 
 class Payment(models.Model):
     stripe_id = models.CharField(max_length=50)

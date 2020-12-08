@@ -19,7 +19,7 @@ from shopping import views
 from django.views.generic import TemplateView 
 
 urlpatterns = [
-    path('', include('shopping.urls', namespace='shopping')),
+    path('store/', include('shopping.urls', namespace='shopping')),
     path('admin/', admin.site.urls),
     path('django/', views.home, name="home"),
     path('', TemplateView.as_view(template_name = "index.html")),
