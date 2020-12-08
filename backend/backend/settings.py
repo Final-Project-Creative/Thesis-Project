@@ -81,9 +81,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'myshopping',
+        'NAME': 'shop',
         'USER': 'root',
-        'PASSWORD': 'rasha',
+        'PASSWORD': 'imad12345*',
         'PORT': '3306',
         'HOST': '127.0.0.1',
     }
@@ -130,4 +130,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "frontend/build/static"),
     os.path.join(BASE_DIR,'static'),
 ]
+ 
+MEDIA_URL = '/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 STATIC_ROOT = os.path.join(BASE_DIR,'assets')
