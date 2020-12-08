@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.db.models import Sum
 from django.shortcuts import reverse
 from django_countries.fields import CountryField
 
@@ -23,12 +24,23 @@ class Item(models.Model):
     itemName=models.CharField(max_length=70,null=True)
     details=models.CharField(max_length=200,null=True)
     price=models.FloatField(null=True)
-    image=models.CharField(max_length=200,null=True)
+    image=models.ImageField()
     quantity=models.CharField(max_length=200,null=True)
     category = models.CharField(choices=CATEGORY, max_length=20)
     entry_date=models.DateTimeField(auto_now_add=True,null=True)
     # slug = models.SlugField()
     
+
+    @property
+    def imageURL(self):
+        try:
+            url=self.image.url
+        
+        except:
+            url=''
+        return self
+
+
     def __str__(self):
         return self.itemName
 
