@@ -11,7 +11,7 @@ class UserProfile(models.Model):
     one_click_purchasing = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user.username
+        return self.user
 
 class Item(models.Model):
     CATEGORY=(
@@ -105,7 +105,7 @@ class Order(models.Model):
     ordered = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user.username
+        return self.user
     
 
     def get_total_price(self):
@@ -122,7 +122,7 @@ class CheckoutAddress(models.Model):
     zip = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.user.username
+        return self.user
 
 class Payment(models.Model):
     stripe_id = models.CharField(max_length=50)
@@ -133,6 +133,3 @@ class Payment(models.Model):
 
     def __str__(self):
         return self.user.username
-
-
-# Create your models here.
